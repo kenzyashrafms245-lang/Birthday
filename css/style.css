@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fde2e4;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    width: 350px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+h3 {
+    margin-bottom: 5px;
+    color: #d6336c;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #f7cad0;
+    border-radius: 10px;
+    margin: 10px 0;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c9184a;
+}
+
+small {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* birthday */

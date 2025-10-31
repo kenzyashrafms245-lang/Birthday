@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            background: #f3ffe3;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #2b8a3e;
+            font-size: 40px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #4f772d;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: #3c3c3c;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .cake {
+            font-size: 120px;
+            animation: bounce 1.2s infinite;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .wish {
+            font-size: 25px;
+            margin-top: 15px;
+            color: #d6336c;
+            font-weight: bold;
+        }
+
+        .timer-box {
+            background: #e9f7dc;
+            border-radius: 15px;
+            padding: 20px;
+            width: 70%;
+            margin: 40px auto;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .timer-box h2 {
+            color: #2b8a3e;
+            margin-bottom: 10px;
+            font-size: 26px;
+        }
+
+        .counter {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+        }
+
+        .counter div {
+            background: white;
+            padding: 15px 18px;
+            width: 100px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #2b8a3e;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .reasons-section {
+            background: #f8ffea;
+            padding: 30px;
+            border-radius: 15px;
+            width: 75%;
+            margin: 40px auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .reasons-title {
+            text-align: center;
+            color: #2b8a3e;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .reasons-list {
+            list-style: none;
+            text-align: left;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        .reasons-list li {
+            background: white;
+            padding: 12px 18px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            color: #3c3c3c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 5px solid #5dbb63;
+        }
+
+        .reasons-list li {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeUp .8s forwards;
+        }
+
+        .reasons-list li:nth-child(1) {
+            animation-delay: .2s;
+        }
+
+        .reasons-list li:nth-child(2) {
+            animation-delay: .4s;
+        }
+
+        .reasons-list li:nth-child(3) {
+            animation-delay: .6s;
+        }
+
+        .reasons-list li:nth-child(4) {
+            animation-delay: .8s;
+        }
+
+        .reasons-list li:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .reasons-list li:nth-child(6) {
+            animation-delay: 1.2s;
+        }
+
+        .reasons-list li:nth-child(7) {
+            animation-delay: 1.4s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            background-color: #e6f4ea;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .memories {
+            padding: 40px;
+        }
+
+        .memories h2 {
+            color: #2e7d32;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 220px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Section background */
+        .love-section {
+            background: #b4f7b4;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        /* Card */
+        .love-card {
+            background: white;
+            width: 350px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: .3s;
+        }
+
+        .love-card:hover {
+            transform: scale(1.05);
+        }
+
+        .heart-icon {
+            width: 90px;
+            animation: pulse 1.2s infinite ease-in-out;
+        }
+
+        .love-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #444;
+            margin-top: 10px;
+        }
+
+        /* Popup */
+        .letter-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .letter-content {
+            background: #fff;
+            padding: 30px;
+            width: 400px;
+            border-radius: 15px;
+            text-align: center;
+            animation: fadeUp .4s;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .letter-content button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #ff4c84;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .letter-content button:hover {
+            opacity: .85;
+        }
+
+        /* Full Letter Page */
+        .letter-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #b3ffb3;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .letter-box {
+            background: #fff;
+            padding: 30px;
+            width: 70%;
+            max-width: 700px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .letter-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e91e63;
+        }
+
+        .letter-box button {
+            margin-top: 20px;
+            display: block;
+            padding: 10px 20px;
+            background: #ff4c84;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .letter-box button:hover {
+            opacity: .85;
+        }
+
+        .love-letter-section {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .love-btn,
+        .close-btn {
+            background-color: #ff8fb1;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .love-btn:hover,
+        .close-btn:hover {
+            background-color: #ff6f98;
+        }
+
+        .love-card {
+            background: white;
+            width: 80%;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .love-card h2 {
+            color: #4c956c;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .love-card p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .heart {
+            font-size: 35px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Happy Birthday shamshomyyy 💚</h1>
+    <h2>To My BestFriend & my sister</h2>
+    <p>On this special day, I celebrate you and all the beautiful moments we share together ✨</p>
+
+    <div class="cake">🎂</div>
+
+    <div class="wish">Make a Wish! ✨</div>
+
+    <div class="timer-box">
+        <h2>It’s been a long time since we became friends</h2>
+        <p>Since the day you became my sister...</p>
+
+        <div class="counter">
+            <div><span id="years">0</span> YEARS</div>
+
+        </div>
+        <p>Growing up, growing in love, and still here 💫</p>
+
+        <p>Every second with you has been a blessing! 💞</p>
+    </div>
+
+    <div class="reasons-section">
+        <h2 class="reasons-title">💚 Reasons Why I Love You 💚</h2>
+
+        <ul class="reasons-list">
+            <li>I love you because you stayed.
+                You never gave up on me.
+                You stood by me when I doubted myself, and you believed in me when I couldn’t.
+                You’re the kind of friend people pray for — and I’ll forever thank God that He chose you for me.💗</li>
+            <li>You’re not just my best friend.
+                You’re my safe place, my comfort person, the one who understands my silence, who sees my mood from one
+                word, who knows my heart even when I can’t explain it.✨</li>
+            <li>We’ve seen each other change, struggle, fall, and get back up stronger.
+                We’ve survived stress, exams, life phases, and still… nothing changed. 🤝</li>
+            <li>You make the little moments feel magical</li>
+            <li>Forever grateful for you.
+                Forever proud of us.
+                Forever best friends. ❤️</li>
+        </ul>
+    </div>
+    <section class="memories">
+        <h2>📁 Our Precious Memories</h2>
+        <div class="gallery">
+            <img src="./imgs/2.jpg" alt="Memory 1">
+            <img src="./imgs/5.jpg" alt="Memory 2">
+            <img src="./imgs/6.jpg" alt="Memory 3">
+            <img src="./imgs/7.jpg" alt="Memory 4">
+            <img src="./imgs/0.jpg" alt="Memory 12">
+            <img src="./imgs/1.jpg" alt="Memory 5">
+            <img src="./imgs/3.jpg" alt="Memory 6">
+            <img src="./imgs/4.jpg" alt="Memory 7">
+            <img src="./imgs/8.jpg" alt="Memory 8">
+            <img src="./imgs/9.jpg" alt="Memory 9">
+            <img src="./imgs/10.jpg" alt="Memory 10">
+            <img src="./imgs/11.jpg" alt="Memory 11">
+            <img src="./imgs/12.jpg" alt="Memory 12">
+            <img src="./imgs/13.jpg" alt="Memory 1">
+            <img src="./imgs/14.jpg" alt="Memory 2">
+            <img src="./imgs/16.jpg" alt="Memory 4">
+            <img src="./imgs/17.jpg" alt="Memory 5">
+            <img src="./imgs/18.jpg" alt="Memory 6">
+            <img src="./imgs/19.jpg" alt="Memory 7">
+            <img src="./imgs/20.jpg" alt="Memory 8">
+            <img src="./imgs/21.jpg" alt="Memory 9">
+            <img src="./imgs/22.jpg" alt="Memory 10">
+            <img src="./imgs/15.jpg" alt="Memory 3">
+            <img src="./imgs/23.jpg" alt="Memory 11">
+        </div>
+    </section>
+    <!-- Love Letter Section -->
+    <section id="love-letter-section" class="love-section">
+        <div class="love-card" onclick="openLoveLetter()">
+            <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" class="heart-icon" alt="Heart">
+            <p class="love-text">Click to open my love letter 💌</p>
+        </div>
+    </section>
+
+    <!-- Love Letter Full Message -->
+    <div id="loveLetterPage" class="letter-page">
+        <div class="letter-box">
+            <h2>Happy Birthday, My Love 💗</h2>
+
+            <p>
+                First of all, I just want to thank you for your love, care, and all the little moments that make my days
+                brighter.
+                You've been such a blessing in my life and I'll never stop being grateful for the way you make
+                everything feel lighter,
+                warmer, and happier just by being you. 💕
+            </p>
+
+            <p>
+                Since the day we became friends in grade 5 and until university now,
+                you’ve always been the warmest part of my story.
+                You mean the world to me — and I’ll always be by your side to love you endlessly,
+                support you, and make you laugh even when life gets heavy.
+            </p>
+
+            <p>
+                No matter what happens, my love for you will never fade.
+                It only grows deeper with every smile, every memory,
+                and every moment we share. ❤️
+            </p>
+
+            <p>I love you sooo muchhh 💘</p>
+
+            <button onclick="closeLoveLetter()">Close & Open Again</button>
+        </div>
+    </div>
+    <!-- Love Letter Section -->
+    <section class="love-letter-section">
+        <button id="openLetterBtn" class="love-btn">And finally click here </button>
+
+        <div id="loveCard" class="love-card hidden">
+            <span class="heart">❤️</span>
+            <h2>I Love You Forever!</h2>
+            <p>From grade 5 to university... and still counting 🕊️💚</p>
+            <p>Thank you for being the person who stayed, who understood, who made every chapter better. You are a
+                treasure in my life 🫶</p>
+
+            <button id="closeLetterBtn" class="close-btn">Close & Return</button>
+        </div>
+    </section>
+
+
+    <script>
+
+        const startYear = 2015;
+        const startMonth = 9;
+
+        function updateJourney() {
+            const startDate = new Date(startYear, startMonth - 1);
+            const now = new Date();
+
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            document.getElementById("years").innerText = years;
+            document.getElementById("months").innerText = months;
+        }
+
+        updateJourney(); 
+    </script>
+    <script>
+        function openLoveLetter() {
+            document.getElementById("loveLetterPage").style.display = "flex";
+            window.scrollTo(0, 0);
+        }
+
+        function closeLoveLetter() {
+            document.getElementById("loveLetterPage").style.display = "none";
+            window.location.href = "birthday.html"; // reload page again
+        }
+
+
+
+    </script>
+    <script>
+        const openBtn = document.getElementById("openLetterBtn");
+        const closeBtn = document.getElementById("closeLetterBtn");
+        const loveCard = document.getElementById("loveCard");
+
+        openBtn.addEventListener("click", () => {
+            loveCard.classList.remove("hidden");
+            openBtn.style.display = "none";
+        });
+
+        closeBtn.addEventListener("click", () => {
+            loveCard.classList.add("hidden");
+            openBtn.style.display = "inline-block";
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+
+</body>
+
+</html>
